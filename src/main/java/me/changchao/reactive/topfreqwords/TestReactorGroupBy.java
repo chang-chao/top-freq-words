@@ -31,6 +31,8 @@ public class TestReactorGroupBy implements CommandLineRunner {
 		log.info("waiting to get the count of groups");
 		// !!the line below gets blocked forever!!
 		Long count = wordGroups.count().block();
+
+		// !!the line below get never called.
 		log.info("got count=" + count);
 	}
 
