@@ -9,7 +9,7 @@ import org.springframework.web.reactive.function.client.WebClient.Builder;
 import me.changchao.reactive.topfreqwords.client.TopFreqWordCounterBase;
 import reactor.core.publisher.Flux;
 
-@Component
+//@Component
 public class TopFreqWordCounterTxt extends TopFreqWordCounterBase {
 
 	@Override
