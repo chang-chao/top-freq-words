@@ -21,8 +21,10 @@ public class TestReactorGroupBy implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		// read a text file line by line
 		Flux<String> lines = fromPath(Paths.get(TopFreqWordsApplication.INPUT_TXT_FILE));
+
 		// convert to words
 		Flux<String> words = lines.filter(it -> StringUtils.isNotBlank(it)).flatMapIterable(WordUtils::extractWords);
+
 		// group by words
 		Flux<GroupedFlux<String, String>> wordGroups = words.groupBy(it -> it);
 

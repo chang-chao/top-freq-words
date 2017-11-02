@@ -24,9 +24,11 @@ public class TestRxJavaGroupBy implements CommandLineRunner {
 		try (Stream<String> stream = Files.lines(Paths.get(TopFreqWordsApplication.INPUT_TXT_FILE));) {
 
 			Observable<String> lines = Observable.fromIterable(stream::iterator);
+
 			// convert to words
 			Observable<String> words = lines.filter(it -> StringUtils.isNotBlank(it))
 					.flatMapIterable(WordUtils::extractWords);
+
 			// group by words
 			Observable<GroupedObservable<String, String>> wordGroups = words.groupBy(it -> it);
 
