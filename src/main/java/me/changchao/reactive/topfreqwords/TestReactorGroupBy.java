@@ -13,9 +13,9 @@ import lombok.extern.apachecommons.CommonsLog;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.GroupedFlux;
 
-@Component
+//@Component
 @CommonsLog
-public class TestGroupBy implements CommandLineRunner {
+public class TestReactorGroupBy implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
