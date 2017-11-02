@@ -26,8 +26,8 @@ public class TestGroupBy implements CommandLineRunner {
 		// group by words
 		Flux<GroupedFlux<String, String>> wordGroups = words.groupBy(it -> it);
 
+		// !!the line below gets blocked forever!!
 		log.info(wordGroups.count().block());
-
 	}
 
 	private Flux<String> fromPath(Path path) {
