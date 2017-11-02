@@ -52,9 +52,7 @@ public class TopFreqWordCounter implements CommandLineRunner {
 		Flux<GroupedFlux<String, String>> wordGroups = words.groupBy(it -> it);
 
 		// get the number of for each word
-		Flux<Pair<String, Long>> wordCounts = wordGroups.flatMap(gr -> {
-			return gr.count().map(cnt -> Pair.of(gr.key(), cnt));
-		});
+		Flux<Pair<String, Long>> wordCounts = wordGroups.flatMap(gr -> gr.count().map(cnt -> Pair.of(gr.key(), cnt)));
 
 		// get top N words
 		Flux<Pair<String, Long>> topFreqWords = wordCounts.sort((p1, p2) -> Long.compare(p2.getRight(), p1.getRight()))
