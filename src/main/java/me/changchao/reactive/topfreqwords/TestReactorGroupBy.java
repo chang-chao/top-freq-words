@@ -13,7 +13,7 @@ import lombok.extern.apachecommons.CommonsLog;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.GroupedFlux;
 
-//@Component
+@Component
 @CommonsLog
 public class TestReactorGroupBy implements CommandLineRunner {
 
@@ -28,8 +28,10 @@ public class TestReactorGroupBy implements CommandLineRunner {
 		// group by words
 		Flux<GroupedFlux<String, String>> wordGroups = words.groupBy(it -> it);
 
+		log.info("waiting to get the count of groups");
 		// !!the line below gets blocked forever!!
-		log.info(wordGroups.count().block());
+		Long count = wordGroups.count().block();
+		log.info("got count=" + count);
 	}
 
 	private Flux<String> fromPath(Path path) {
