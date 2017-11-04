@@ -5,9 +5,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import lombok.extern.apachecommons.CommonsLog;
-
-@CommonsLog
 public class WordUtils {
 
 	/**
@@ -24,7 +21,6 @@ public class WordUtils {
 			String word = textLine.substring(m.start(), m.end());
 			wordList.add(word);
 		}
-		log.info("text=" + textLine);
 		return wordList;
 
 	}
