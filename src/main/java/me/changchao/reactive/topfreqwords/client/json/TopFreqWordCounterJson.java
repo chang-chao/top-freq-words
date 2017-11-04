@@ -7,7 +7,7 @@ import me.changchao.reactive.topfreqwords.SingleLine;
 import me.changchao.reactive.topfreqwords.client.TopFreqWordCounterBase;
 import reactor.core.publisher.Flux;
 
-//@Component
+@Component
 public class TopFreqWordCounterJson extends TopFreqWordCounterBase {
 
 	@Override

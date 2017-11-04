@@ -10,7 +10,7 @@ import me.changchao.reactive.topfreqwords.TopFreqWordsApplication;
 import me.changchao.reactive.topfreqwords.client.TopFreqWordCounterBase;
 import reactor.core.publisher.Flux;
 
-//@Component
+@Component
 public class TopFreqWordCounterStringArray extends TopFreqWordCounterBase {
 
 	@Override
